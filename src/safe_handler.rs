@@ -5,8 +5,7 @@ use std::process::Command;
 /// NEGATIVE TEST FILE — secure equivalents of every vulnerable pattern.
 ///
 /// Flows user input through safe APIs to each sink type. The scanner MUST
-/// produce ZERO security findings here. Any finding is a FALSE POSITIVE to be
-/// filed against cognium-dev.
+/// produce ZERO security findings here. Any finding is a FALSE POSITIVE.
 ///
 /// Safe patterns exercised:
 ///   path_traversal    → canonicalize + starts_with prefix check
