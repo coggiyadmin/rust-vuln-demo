@@ -1,0 +1,8 @@
+[package]
+name = "app"
+version = "0.1.0"
+license = "MIT"
+
+[dependencies]
+gpl-crate = { version = "1.0", registry = "crates-io" }
+# gpl-crate license: GPL-3.0-only
