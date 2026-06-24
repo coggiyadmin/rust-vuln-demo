@@ -1,4 +1,4 @@
-// FP-target (elarasu cognium-dev#128/#140) — LIBRARY profile. `where_clause` is caller-supplied,
+// FP-target (upstream cognium-dev#128/#140) — LIBRARY profile. `where_clause` is caller-supplied,
 // not an HTTP entry point.
 #![allow(dead_code)]
 pub fn by_filter(where_clause: &str) -> String {
