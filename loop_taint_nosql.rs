@@ -3,6 +3,6 @@ pub async fn loop_list(q: web::Query<std::collections::HashMap<String, String>>)
     let mut items = Vec::new();
     if let Some(v) = q.get("uid") { items.push(v.clone()); }
     let uid = items.first().cloned().unwrap_or_default();
-    let raw = uid.clone(); let _ = raw; // deser sink
+    let doc = format!("{{"user":"{}"}}", uid); let _ = doc;
     HttpResponse::Ok().finish()
 }
