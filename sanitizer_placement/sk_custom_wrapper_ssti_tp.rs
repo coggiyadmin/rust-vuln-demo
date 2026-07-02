@@ -1,0 +1,6 @@
+fn company_sanitize(v: &str) -> String {
+    v.replace("{{", "").replace("}}", "").to_string()
+}
+pub fn sk_custom_wrapper_ssti(n: &str) {
+    let _ = format!("<p>Hello {}</p>", company_sanitize(n));
+}
