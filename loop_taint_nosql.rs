@@ -1,8 +1,6 @@
-use actix_web::{web, HttpResponse};
-pub async fn loop_list(q: web::Query<std::collections::HashMap<String, String>>) -> HttpResponse {
-    let mut items = Vec::new();
-    if let Some(v) = q.get("uid") { items.push(v.clone()); }
-    let uid = items.first().cloned().unwrap_or_default();
-    let doc = format!("{{"user":"{}"}}", uid); let _ = doc;
-    HttpResponse::Ok().finish()
+// Combination #3 — LOOP × NOSQL (CWE-943, Rust).
+pub fn loop_nosql(items: &[String]) {
+    for x in items {
+        let _ = format!("find({{user: '{}'}}", x); // CWE-943
+    }
 }
