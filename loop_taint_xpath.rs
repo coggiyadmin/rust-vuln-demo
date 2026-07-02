@@ -1,8 +1,6 @@
-use actix_web::{web, HttpResponse};
-pub async fn loop_list(q: web::Query<std::collections::HashMap<String, String>>) -> HttpResponse {
-    let mut items = Vec::new();
-    if let Some(v) = q.get("uid") { items.push(v.clone()); }
-    let uid = items.first().cloned().unwrap_or_default();
-    let expr = format!("//user[name='{}']", uid); let _ = expr;
-    HttpResponse::Ok().finish()
+// c03 loop × xpath (Rust parity)
+pub fn loop_taint_xpath(q: String) {
+    let mut acc = String::new();
+    for ch in q.chars() { acc.push(ch); }
+    let _ = acc; // loop-carried
 }

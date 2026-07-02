@@ -1,11 +1,6 @@
-// Combination #2 — PATH-SENSITIVITY × NOSQL (CWE-943, Rust).
-use actix_web::{web, HttpResponse};
-
-pub async fn ps_nosql_neg(q: web::Query<std::collections::HashMap<String, String>>) -> HttpResponse {
-    let val = q.get("q").cloned().unwrap_or_default();
-    if val == "safe" {
-        return HttpResponse::Ok().finish();
+// c02 path-sensitivity × nosql (Rust parity)
+pub fn path_sensitive_nosql(v: String) {
+    if !v.starts_with("safe") {
+        let _ = v;
     }
-    let _ = format!("db.users.find({{name: '{}'}}", val); // CWE-943 pattern
-    HttpResponse::Ok().finish()
 }

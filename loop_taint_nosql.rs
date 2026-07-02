@@ -1,6 +1,6 @@
-// Combination #3 — LOOP × NOSQL (CWE-943, Rust).
-pub fn loop_nosql(items: &[String]) {
-    for x in items {
-        let _ = format!("find({{user: '{}'}}", x); // CWE-943
-    }
+// c03 loop × nosql (Rust parity)
+pub fn loop_taint_nosql(q: String) {
+    let mut acc = String::new();
+    for ch in q.chars() { acc.push(ch); }
+    let _ = acc; // loop-carried
 }

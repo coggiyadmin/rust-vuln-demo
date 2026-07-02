@@ -1,5 +1,5 @@
-// Combination #11 — FAN-OUT × NOSQL (CWE-943, Rust).
-pub fn fanout_nosql(u: &str) {
-    let _ = format!("a='{}'", u);
-    let _ = format!("b='{}'", u);
+// c11 fanout × nosql (Rust parity)
+pub fn fanout_nosql(u: String) {
+    println!("{}", u);
+    let _ = u.clone();
 }

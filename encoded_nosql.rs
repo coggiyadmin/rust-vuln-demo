@@ -1,7 +1,7 @@
-// Combination #13 — ENCODED × NOSQL (CWE-943, Rust).
-use base64::{engine::general_purpose::STANDARD, Engine as _};
-
-pub fn enc_b64_nosql(raw: &str) {
-    let u = String::from_utf8_lossy(&STANDARD.decode(raw).unwrap_or_default());
-    let _ = format!("user == '{}'", u); // CWE-943
+// c13 encoded × nosql (Rust parity)
+pub fn encoded_nosql(hexed: String) {
+    let bytes: Vec<u8> = hexed.as_bytes().chunks(2)
+        .filter_map(|c| u8::from_str_radix(std::str::from_utf8(c).unwrap_or(b"0"), 16).ok())
+        .collect();
+    let _ = String::from_utf8_lossy(&bytes);
 }

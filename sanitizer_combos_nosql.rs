@@ -1,5 +1,8 @@
-// Combinations #6/#7 — SANITIZER × NOSQL (CWE-943, Rust).
-pub fn wrong_ctx(user: &str) {
-    let safe = user.replace('<', "_");
-    let _ = format!("$where: this.a == '{}'", safe); // CWE-943
+// c06/c07 sanitizer × nosql (Rust parity)
+fn fake(s: String) -> String { s }
+pub fn sanitizer_wrong_nosql(v: String) {
+    let _ = v.replace('<', "_");
+}
+pub fn sanitizer_fake_nosql(v: String) {
+    let _ = fake(v);
 }
