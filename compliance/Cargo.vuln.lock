@@ -1,0 +1,8 @@
+# TP — vulnerable crates (RUSTSEC-style oracle)
+[[package]]
+name = "time"
+version = "0.1.44"
+
+[[package]]
+name = "smallvec"
+version = "1.6.0"
