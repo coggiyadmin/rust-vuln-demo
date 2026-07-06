@@ -1,0 +1,9 @@
+[package]
+name = "app"
+version = "0.1.0"
+# Ambiguous dual-license declaration with copyleft dependency (SPDX TP).
+license = "MIT OR Apache-2.0 AND GPL-3.0-only"
+
+[dependencies]
+dual-licensed-lib = { version = "2.0", registry = "crates-io" }
+# dual-licensed-lib: (MIT OR Apache-2.0) AND GPL-3.0-only
