@@ -8,6 +8,5 @@ pub async fn input_validation_safe(req: web::Query<std::collections::HashMap<Str
     if amount <= 0 || amount > MAX {
         return HttpResponse::BadRequest().body("bad amount");
     }
-    let to = req.get("to").cloned().unwrap_or_default();
-    HttpResponse::Ok().body(format!("xfer {amount} to {to}"))
+    HttpResponse::Ok().body("xfer ok")
 }
